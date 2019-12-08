@@ -1,5 +1,5 @@
 {
-  "name": "heatTest",
+  "name": "segurusp",
   "version": "0.0.1",
   "private": true,
   "scripts": {
@@ -35,5 +35,17 @@
   },
   "jest": {
     "preset": "react-native"
-  }
+  },
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/danbarretto/SegurUSP.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/danbarretto/SegurUSP/issues"
+  },
+  "homepage": "https://github.com/danbarretto/SegurUSP#readme",
+  "description": ""
 }

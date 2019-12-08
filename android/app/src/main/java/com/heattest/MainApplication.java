@@ -1,4 +1,4 @@
-package com.heattest;
+package com.segurusp;
 
 import android.app.Application;
 import android.content.Context;

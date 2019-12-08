@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "601790555649",
+    "firebase_url": "https://segurusp.firebaseio.com",
+    "project_id": "segurusp",
+    "storage_bucket": "segurusp.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:601790555649:android:b4e2b0f972b629dc1f0200",
+        "android_client_info": {
+          "package_name": "segurUSP.firebase"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "601790555649-vkepfjsljc3eg2b5ju3mksntf9tise16.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDGW69w4jIqdwubAHKZV85lAThq6lsh35c"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "601790555649-vkepfjsljc3eg2b5ju3mksntf9tise16.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
