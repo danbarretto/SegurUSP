@@ -1,24 +1,74 @@
-import React, {useEffect} from 'react';
-import {StyleSheet, Text, View} from 'react-native';
-import MapView, {PROVIDER_GOOGLE} from 'react-native-maps'; // remove PROVIDER_GOOGLE import if not using Google Maps
+import React, {useState} from 'react';
+import Map from './Map';
+import {
+  Provider as PaperProvider,
+  DefaultTheme,
+  Appbar,
+  Menu,
+  Divider,
+} from 'react-native-paper';
 
-const styles = StyleSheet.create({
-  container: {
-    ...StyleSheet.absoluteFillObject,
-    height: '100%',
-    width: '100%',
-    justifyContent: 'flex-end',
-    alignItems: 'center',
-  },
-  map: {
-    ...StyleSheet.absoluteFillObject,
-  },
-});
+import {Linking} from 'react-native'
 
-export default function App(){
-  return(
-    <View>
-      <Text>Hello world</Text>
-    </View>
-  )
+export default function App() {
+  const [visible, setVisible] = useState(false);
+  const theme = {
+    ...DefaultTheme,
+    colors: {
+      ...DefaultTheme.colors,
+      primary: '#10A4D1',
+      accent: '#FF7C00',
+    },
+  };
+
+  const openMenu = () => {
+    setVisible(true);
+  };
+
+  const closeMenu = () => {
+    setVisible(false);
+  };
+
+  return (
+    <PaperProvider theme={theme}>
+      <Map></Map>
+      <Appbar.Header>
+        <Appbar.Content title="SegurUSP" />
+
+        <Menu
+          visible={visible}
+          onDismiss={closeMenu}
+          anchor={
+            <Appbar.Action
+              icon="dots-vertical"
+              onPress={() => {
+                openMenu();
+              }}
+              color="white"></Appbar.Action>
+          }>
+          <Menu.Item
+            title="Boletim de Ocorrência Online"
+            onPress={() => {
+              const url =
+                'https://www.delegaciaeletronica.policiacivil.sp.gov.br/ssp-de-cidadao/pages/comunicar-ocorrencia';
+              Linking.canOpenURL(url).then(supported => {
+                if (supported) {
+                  Linking.openURL(url);
+                } else {
+                  console.log("Error on opening: " + url);
+                }
+              });
+            }}
+          />
+          <Menu.Item
+            title="Ligar para Guarda Universitária"
+            onPress={()=>{
+              let phoneNumber = '(16) 3373-6666'
+              Linking.openURL(`tel:${phoneNumber}`);
+            }}
+          />
+        </Menu>
+      </Appbar.Header>
+    </PaperProvider>
+  );
 }
